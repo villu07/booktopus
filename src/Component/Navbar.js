@@ -26,7 +26,7 @@ export const Navbar=(props)=>{
                 <DropdownItem >Another Action</DropdownItem>
               </DropdownMenu>
             </ButtonDropdown>
-            <Button style={{backgroundColor:'#000000',border:'0px' }} className="btn btn-dark btn float-right ml-3" size="lg" href="/Login"><TiUser size="25px"></TiUser></Button>
+            <Button style={{backgroundColor:'#333',border:'0px' }} className="btn btn-dark btn float-right ml-3" size="lg" href="/Login"><TiUser size="25px"></TiUser></Button>
         </Nav>
         </Navbar>
     </div>
