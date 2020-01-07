@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button,Form, Input,Label,FormGroup,Table,CardLink} from 'reactstrap';
 import {GiSpellBook} from 'react-icons/gi';
 import {MdPerson,MdLock} from 'react-icons/md';
-import './index.css';
+import '../Component/css/index.css';
 //import { Button } from 'reactstrap';
 
 export class Login extends Component {
@@ -32,7 +32,7 @@ export class Login extends Component {
                                 <Button type="submit" className="button">Login</Button>
                                 </div>
                                 <div style={{textAlign:'center'}}>
-                                    <CardLink href="/Signup" style={{color:'#000000',fontSize:'13px'}}>Sign up</CardLink>
+                                    <CardLink href="/Register" style={{color:'#000000',fontSize:'13px'}}>Sign up</CardLink>
                                     <span className="p-2" style={{fontSize:'13px'}}>|</span>
                                     <CardLink href="/ForgotPassword" style={{color:'#000000',fontSize:'13px'}}>Forgot Password</CardLink>
                                 </div>

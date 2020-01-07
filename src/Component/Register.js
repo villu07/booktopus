@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'https://fonts.googleapis.com/css?family=Montserrat%27';
 import {Button,Form, Input,Label,FormGroup,Table} from 'reactstrap';
 import {GiSpellBook} from 'react-icons/gi';
-import './index.css';
+import '../Component/css/index.css';
 //import { Button } from 'reactstrap';
 
 export class Register extends Component {
@@ -19,11 +19,11 @@ export class Register extends Component {
                                 <h2 className="text-center mb-3">BOOKTOPUS</h2>
                                 <FormGroup>
                                     <Label className="a">First Name</Label>
-                                    <Input type="text" name="firstname" placeholder="Enter Your First Name" size="sm" required/>
+                                    <Input type="text" name="first_name" placeholder="Enter Your First Name" size="sm" required/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label className="a">Last Name</Label>
-                                    <Input type="text" name="lastname" placeholder="Enter Your Last Name" size="sm" required/>
+                                    <Input type="text" name="last_name" placeholder="Enter Your Last Name" size="sm" required/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label className="a">Email</Label>
