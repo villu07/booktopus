@@ -4,6 +4,8 @@ import {Home} from './Component/Home.js';
 import { Register } from './Component/Register.js'
 import { Login } from './Component/Login.js';
 import { Navbar } from 'reactstrap';
+//import {Test} from './Component/Test.js';
+//import {Profile} from './Component/Profile';
 
 
 export class App extends Component {

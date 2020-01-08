@@ -58,40 +58,63 @@ router.route('/login')
   .post((req, res, next) => {
 
     userModel.findOne({
-      email : req.body.email
+      email: req.body.email
     })
 
       .then(result => {
 
         if (result) {
 
-          if (bcrypt.compareSync(req.body.password, result.password))
-          {
+          if (bcrypt.compareSync(req.body.password, result.password)) {
             const payload = {
 
-              _id : result._id,
-              first_name : result.first_name,
-              last_name : result.last_name,
-              email : result.email
+              _id: result._id,
+              first_name: result.first_name,
+              last_name: result.last_name,
+              email: result.email
             }
 
             /** From now we are providing stateless authentication by jwt-tokens */
-            let token = jwt.sign(payload,process.env.SECRET_KEY,{
-              expiresIn : 1440
+            let token = jwt.sign(payload, process.env.SECRET_KEY, {
+              expiresIn: 1440
             })
             res.send(token);
           }
-          else{
-            res.json('User does not exists, please enter valid Email and Password'); 
+          else {
+            res.json('User does not exists, please enter valid Email and Password');
           }
         }
-        else{
-          res.json('User does not exists, please enter valid Email and Password'); 
+        else {
+          res.json('User does not exists, please enter valid Email and Password');
         }
       })
-      .catch((err)=>{
-        res.send('error'+err);
+      .catch((err) => {
+        res.send('error' + err);
       })
   })
 
+router.route('/profile')
+
+  .get((req, res) => {
+
+    /** Decoding the encoded user data */
+    var decoded = jwt.verify(req.header['authorization'], process.env.SECRET_KEY);
+
+    /** setting _id */
+    userModel.findOne({
+      _id: decoded._id
+    })
+      .then(result => {
+
+        if(result){
+          res.json(result);
+        }
+        else{
+          res.json('No user found !!');
+        }
+      })
+      .catch(err=>{
+        res.send('error '+err);
+      })
+  })
 module.exports = router;
